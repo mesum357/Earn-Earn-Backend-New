@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install --production
 
 # Copy application code
-COPY app.js ./
+COPY *.js ./
 
 # Create uploads directory
 RUN mkdir -p uploads
