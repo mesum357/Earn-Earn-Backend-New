@@ -15,8 +15,7 @@ const app = express();
 const multer = require('multer');
 const path = require('path');
 
-// Import models
-const User = require('./React Websitee/pak-nexus/backend/models/User');
+// User schema will be defined below
 
 // mongodb+srv://mesum357:pDliM118811@cluster0.h3knh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -488,6 +487,23 @@ mongoose.connect(mongoURI, mongooseOptions)
     });
 
 // User model is imported from external file
+
+// User Schema
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  balance: { type: Number, default: 0 },
+  hasDeposited: { type: Boolean, default: false },
+  isAdmin: { type: Boolean, default: false },
+  verified: { type: Boolean, default: false },
+  verificationToken: String,
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
+  referralCode: { type: String, unique: true },
+  createdAt: { type: Date, default: Date.now }
+});
+const User = mongoose.model('User', userSchema);
 
 // Referral Schema
 const referralSchema = new mongoose.Schema({
