@@ -1,0 +1,37 @@
+# Ignore frontend files
+src/
+public/
+pages/
+app/
+components/
+styles/
+*.tsx
+*.ts
+next.config.*
+tailwind.config.*
+vite.config.*
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore development files
+test-*.js
+debug-*.js
+simple-*.js
+check-*.js
+fix-*.js
+verify-*.js
+create-*.js
+generate-*.js
+manual-*.js
+quick-*.js
+
+# Ignore logs
+*.log
+backend.log
+
+# Ignore uploads
+uploads/
+
+# Ignore git
+.git/
+.gitignore
