@@ -1,0 +1,12 @@
+# Ignore frontend files
+src/
+public/
+pages/
+app/
+components/
+styles/
+*.tsx
+*.ts
+next.config.*
+tailwind.config.*
+vite.config.*
